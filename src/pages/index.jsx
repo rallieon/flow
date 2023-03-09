@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 // WARNING ! errors might get obfuscated by using dynamic import.
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
-const Blob = dynamic(() => import('@/components/canvas/Blob'), { ssr: false })
+const SubScene = dynamic(() => import('@/components/canvas/SubScene'), { ssr: false })
 
 // Dom components go here
 export default function Page(props) {
@@ -13,7 +13,7 @@ export default function Page(props) {
 
 // Canvas components go here
 // It will receive same props as the Page component (from getStaticProps, etc.)
-Page.canvas = (props) => <Blob scale={0.5} position-y={-1} />
+Page.canvas = (props) => <SubScene />
 
 export async function getStaticProps() {
   return { props: { title: 'Flow' } }
