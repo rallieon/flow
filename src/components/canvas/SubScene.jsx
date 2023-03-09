@@ -24,7 +24,7 @@ function Sphere() {
   return (
     <Center top>
       <mesh castShadow>
-        <sphereGeometry args={[0.75, 64, 64]} />
+        <sphereGeometry args={[1, 64, 64]} />
         <meshStandardMaterial metalness={1} roughness={roughness} />
       </mesh>
     </Center>
