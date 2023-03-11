@@ -1,7 +1,8 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload, Environment } from '@react-three/drei'
-import { useState, useTransition } from 'react'
-import { useControls } from 'leva'
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Preload, Environment } from '@react-three/drei';
+import { useState, useTransition } from 'react';
+import { useControls } from 'leva';
+import { PresetsType } from '@react-three/drei/helpers/environment-assets';
 
 export default function Scene({ children, ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
@@ -19,14 +20,14 @@ export default function Scene({ children, ...props }) {
         maxPolarAngle={Math.PI / 2.1}
       />
     </Canvas>
-  )
+  );
 }
 
 function Env() {
-  const [preset, setPreset] = useState('dawn')
+  const [preset, setPreset] = useState<PresetsType>('dawn');
   // You can use the "inTransition" boolean to react to the loading in-between state,
   // For instance by showing a message
-  const [inTransition, startTransition] = useTransition()
+  const [inTransition, startTransition] = useTransition();
   const { blur } = useControls({
     blur: { value: 1, min: 0, max: 1 },
     preset: {
@@ -37,6 +38,6 @@ function Env() {
       // That way we can hang onto the current environment until the new one has finished loading ...
       onChange: (value) => startTransition(() => setPreset(value)),
     },
-  })
-  return <Environment preset={preset} background blur={blur} />
+  });
+  return <Environment preset={preset} background blur={blur} />;
 }

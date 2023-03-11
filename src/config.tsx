@@ -1,10 +1,10 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
-const titleDefault = 'Flow'
-const url = 'https://flow-ivory.vercel.app/'
+const titleDefault = 'Flow';
+const url = 'https://flow-ivory.vercel.app/';
 const description =
-  'Static art can be beautiful, but Flow focuses on utilizing particle systems to create a unique, interactive experience for a TakeIt NFT collection.'
-const author = 'Rallieon'
+  'Static art can be beautiful, but Flow focuses on utilizing particle systems to create a unique, interactive experience for a TakeIt NFT collection.';
+const author = 'Rallieon';
 
 export default function Header({ title = titleDefault }) {
   return (
@@ -58,5 +58,5 @@ export default function Header({ title = titleDefault }) {
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:site' content='@onirenaud' />
     </Head>
-  )
+  );
 }
