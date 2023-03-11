@@ -3,11 +3,7 @@ import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
 export default function SubScene({ ...props }) {
-  return (
-    <group position={[0, 0, 0]}>
-      <CustomGeometryParticles count={4000} />
-    </group>
-  );
+  return <CustomGeometryParticles count={4000} />;
 }
 
 const CustomGeometryParticles = (props: { count: number }) => {
