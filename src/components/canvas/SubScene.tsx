@@ -1,4 +1,3 @@
-import { AccumulativeShadows, RandomizedLight } from '@react-three/drei';
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
@@ -6,27 +5,14 @@ export default function SubScene({ ...props }) {
   return (
     <group position={[0, 0, 0]}>
       <CustomGeometryParticles count={8000} shape='sphere' />
-      <AccumulativeShadows
-        temporal
-        frames={200}
-        color='purple'
-        colorBlend={0.5}
-        opacity={1}
-        scale={10}
-        alphaTest={0.85}>
-        <RandomizedLight
-          amount={8}
-          radius={5}
-          ambient={0.5}
-          position={[5, 3, 2]}
-          bias={0.001}
-        />
-      </AccumulativeShadows>
     </group>
   );
 }
 
-const CustomGeometryParticles = (props) => {
+const CustomGeometryParticles = (props: {
+  count: number;
+  shape: 'box' | 'sphere';
+}) => {
   const { count, shape } = props;
 
   // This reference gives us direct access to our points
