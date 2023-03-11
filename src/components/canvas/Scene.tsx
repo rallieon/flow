@@ -9,7 +9,6 @@ export default function Scene({ children, ...props }) {
   return (
     <Canvas {...props} shadows camera={{ position: [0, 0, 4.5], fov: 50 }}>
       {children}
-      <Env />
       <Preload all />
       <OrbitControls />
     </Canvas>
